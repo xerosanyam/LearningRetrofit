@@ -11,18 +11,14 @@ public class Clouds {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
-     * 
-     * @return
-     *     The all
+     * @return The all
      */
     public Integer getAll() {
         return all;
     }
 
     /**
-     * 
-     * @param all
-     *     The all
+     * @param all The all
      */
     public void setAll(Integer all) {
         this.all = all;

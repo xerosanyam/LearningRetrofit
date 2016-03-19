@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         txt_status = (TextView) findViewById(R.id.txt_status);
         txt_humidity = (TextView) findViewById(R.id.txt_humidity);
         txt_pressure = (TextView) findViewById(R.id.txt_press);
-        Log.e("here","1");
+        Log.e("here", "1");
         getReport();
         Log.e("here", "2");
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         RestApi service = retrofit.create(RestApi.class);
 
         Call<Example> call = service.getWheatherReport();
-        Log.e("here","00");
+        Log.e("here", "00");
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                     String status = response.body().getWeather().get(0).getDescription();
                     String humidity = response.body().getMain().getHumidity().toString();
                     String pressure = response.body().getMain().getPressure().toString();
-                    Log.e("cit",city);
-                    Log.e("getting repport","ahaha");
+                    Log.e("cit", city);
+                    Log.e("getting repport", "ahaha");
                     txt_city.setText("city  :  " + city);
                     txt_status.setText("status  :  " + status);
                     txt_humidity.setText("humidity  : " + humidity);
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
 
